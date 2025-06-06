@@ -35,7 +35,7 @@
 
         .slide {
             display: none;
-            padding: 20px 20px 80px 20px; /* Extra bottom padding for navigation */
+            padding: 20px 20px 80px 20px;
             height: 100%;
             position: relative;
             animation: slideIn 0.5s ease-in-out;
@@ -48,7 +48,7 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            padding-top: 30px; /* Extra top padding for headers */
+            padding-top: 30px;
         }
 
         @keyframes slideIn {
@@ -90,13 +90,116 @@
             margin: 0 5px;
         }
 
+        /* Presenter Card Styles */
+        .presenter-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 15px 0 25px 0;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .presenter-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #FF9900;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #FF9900;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .photo-placeholder:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.05);
+        }
+
+        .photo-text {
+            font-size: 0.3em;
+            margin-top: 5px;
+            line-height: 1.2;
+        }
+
+        .presenter-info {
+            text-align: center;
+            width: 100%;
+        }
+
+        .presenter-name {
+            font-size: clamp(1.8em, 5vw, 2.5em);
+            color: #FF9900;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .presenter-title {
+            font-size: clamp(1.2em, 3vw, 1.5em);
+            color: white;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .presenter-bio {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #FF9900;
+        }
+
+        .presenter-bio p {
+            font-size: clamp(1em, 2.5vw, 1.2em);
+            line-height: 1.6;
+            margin: 0;
+            text-align: left;
+            font-style: italic;
+        }
+
+        /* Responsive adjustments for presenter card */
+        @media (min-width: 768px) {
+            .presenter-card {
+                flex-direction: row;
+                text-align: left;
+                gap: 30px;
+            }
+            
+            .presenter-info {
+                text-align: left;
+                flex: 1;
+            }
+            
+            .presenter-bio p {
+                text-align: left;
+            }
+        }
+
         .amazon-box {
             width: clamp(150px, 30vw, 200px);
             height: clamp(100px, 20vw, 150px);
             background: #232F3E;
             border-radius: 10px;
             position: relative;
-            margin: 15px auto 25px auto; /* Extra bottom margin */
+            margin: 15px auto 25px auto;
             animation: bounce 2s infinite;
         }
 
@@ -174,7 +277,7 @@
             color: white;
             padding: 20px;
             border-radius: 15px;
-            margin: 15px 0 25px 0; /* Extra bottom margin */
+            margin: 15px 0 25px 0;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             max-width: 100%;
             width: 100%;
@@ -201,7 +304,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
             gap: 15px;
-            margin: 15px 0 25px 0; /* Extra bottom margin */
+            margin: 15px 0 25px 0;
             max-width: 300px;
             margin-left: auto;
             margin-right: auto;
@@ -221,6 +324,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             animation: float 3s ease-in-out infinite;
             margin: 0 auto;
+            
         }
 
         @keyframes float {
@@ -252,8 +356,27 @@
 </head>
 <body>
     <div class="presentation-container">
-        <!-- Slide 1: Title -->
+        <!-- Slide 1: Presenter Intro -->
         <div class="slide active">
+            <h1>👋 Meet Your Presenter! 👋</h1>
+            <div class="presenter-card">
+                <div class="presenter-photo">
+                    <div class="photo-placeholder">
+                        <div class="photo-text"><img src="./my pic.jfif" alt="presenters photo"></div>
+                    </div>
+                </div>
+                <div class="presenter-info">
+                    <h2 class="presenter-name">Amit Nandy</h2>
+                    <p class="presenter-title">Product Manager at Amazon</p>
+                    <div class="presenter-bio">
+                        <p>I have over 24 years of work experience, including over a decade (10+ Years) in Amazon as a product manager. I hold a post graduate degree in business administration including a certificate in software development from the University of Oregon.   </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Title -->
+        <div class="slide">
             <h1>🚀 What Does a Tech Product Manager Do at Amazon? 🚀</h1>
             <div class="amazon-box">
                 <div class="amazon-logo">amazon</div>
@@ -261,22 +384,22 @@
             <p>A Fun Adventure for Future Tech Stars! <span class="emoji">⭐</span></p>
         </div>
 
-        <!-- Slide 2: What is Amazon? -->
+        <!-- Slide 3: What is Amazon? -->
         <div class="slide">
             <h2>🏢 What is Amazon?</h2>
             <p>Amazon is like a GIANT online store where you can buy almost anything!</p>
-            <div class="apps-grid">
-                <div class="app-icon">📦</div>
-                <div class="app-icon">📱</div>
-                <div class="app-icon">🎵</div>
-                <div class="app-icon">📺</div>
-                <div class="app-icon">☁️</div>
-                <div class="app-icon">🤖</div>
+            <div class="apps-grid"> 
+                <div class="app-icon">📦</div>&nbsp;
+                <div class="app-icon">📱</div>&nbsp;
+                <div class="app-icon">🎵</div>&nbsp;
+                <div class="app-icon">📺</div>&nbsp;
+                <div class="app-icon">☁️</div>&nbsp;
+                <div class="app-icon">🤖</div>&nbsp;
             </div>
-            <p>They deliver packages, make Alexa, create apps, and so much more!</p>
+            <p>They deliver packages, make Alexa, create products like Ring door bell, we also build rockets, satellite and so much more!</p>
         </div>
 
-        <!-- Slide 3: What is a Product Manager? -->
+        <!-- Slide 4: What is a Product Manager? -->
         <div class="slide">
             <h2>🤔 What is a Product Manager?</h2>
             <div class="superhero">🦸‍♀️</div>
@@ -291,7 +414,7 @@
             </div>
         </div>
 
-        <!-- Slide 4: Think Like a Detective -->
+        <!-- Slide 5: Think Like a Detective -->
         <div class="slide">
             <h2>🕵️ They Think Like Detectives!</h2>
             <p>Product Managers ask lots of questions:</p>
@@ -303,7 +426,7 @@
             <p>Then they solve these mysteries by creating awesome products! <span class="emoji">🔍</span></p>
         </div>
 
-        <!-- Slide 5: Work with Teams -->
+        <!-- Slide 6: Work with Teams -->
         <div class="slide">
             <h2>👨‍💻 They Work with Amazing Teams!</h2>
             <p>Product Managers are like team captains who work with:</p>
@@ -318,21 +441,7 @@
             <p>Together, they build the coolest tech products! <span class="emoji">🚀</span></p>
         </div>
 
-        <!-- Slide 6: Real Examples -->
-        <div class="slide">
-            <h2>📱 Cool Things They've Built!</h2>
-            <p>Amazon Product Managers helped create:</p>
-            <div class="apps-grid">
-                <div class="app-icon" title="Alexa">🗣️</div>
-                <div class="app-icon" title="Prime Video">🎬</div>
-                <div class="app-icon" title="Kindle">📚</div>
-            </div>
-            <div class="fun-fact">
-                <p>Ever asked Alexa to play your favorite song? A Product Manager helped make that possible!</p>
-            </div>
-        </div>
-
-        <!-- Slide 7: Skills Needed -->
+          <!-- Slide 7: Skills Needed -->
         <div class="slide">
             <h2>💪 What Skills Do You Need?</h2>
             <div class="job-list">
@@ -377,7 +486,7 @@
 
         <!-- Slide Counter -->
         <div class="slide-counter">
-            <span id="slideNumber">1</span> / <span id="totalSlides">9</span>
+            <span id="slideNumber">1</span> / <span id="totalSlides">10</span>
         </div>
     </div>
 
