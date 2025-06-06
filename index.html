@@ -35,18 +35,20 @@
 
         .slide {
             display: none;
-            padding: 20px;
+            padding: 20px 20px 80px 20px; /* Extra bottom padding for navigation */
             height: 100%;
             position: relative;
             animation: slideIn 0.5s ease-in-out;
             overflow-y: auto;
+            box-sizing: border-box;
         }
 
         .slide.active {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
+            padding-top: 30px; /* Extra top padding for headers */
         }
 
         @keyframes slideIn {
@@ -57,18 +59,22 @@
         .slide h1 {
             font-size: clamp(1.8em, 5vw, 3em);
             color: #232F3E;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            margin-top: 0;
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             line-height: 1.2;
+            width: 100%;
         }
 
         .slide h2 {
             font-size: clamp(1.5em, 4vw, 2.5em);
             color: #FF9900;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            margin-top: 0;
             text-align: center;
             line-height: 1.2;
+            width: 100%;
         }
 
         .slide p, .slide li {
@@ -90,7 +96,7 @@
             background: #232F3E;
             border-radius: 10px;
             position: relative;
-            margin: 15px auto;
+            margin: 15px auto 25px auto; /* Extra bottom margin */
             animation: bounce 2s infinite;
         }
 
@@ -112,24 +118,30 @@
 
         .navigation {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
+            bottom: 15px;
+            right: 15px;
             display: flex;
-            gap: 5px;
+            gap: 8px;
             flex-wrap: wrap;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 5px;
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .nav-btn {
-            padding: 8px 16px;
+            padding: 10px 18px;
             background: #FF9900;
             color: white;
             border: none;
-            border-radius: 25px;
+            border-radius: 20px;
             cursor: pointer;
-            font-size: clamp(0.9em, 2.5vw, 1.2em);
+            font-size: clamp(0.9em, 2.5vw, 1.1em);
             font-weight: bold;
             transition: all 0.3s ease;
-            min-width: 80px;
+            min-width: 85px;
+            white-space: nowrap;
         }
 
         .nav-btn:hover {
@@ -145,14 +157,16 @@
 
         .slide-counter {
             position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 8px 12px;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
             border-radius: 20px;
             font-weight: bold;
             color: #232F3E;
             font-size: clamp(0.8em, 2vw, 1em);
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .job-list {
@@ -160,34 +174,38 @@
             color: white;
             padding: 20px;
             border-radius: 15px;
-            margin: 15px 0;
+            margin: 15px 0 25px 0; /* Extra bottom margin */
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             max-width: 100%;
+            width: 100%;
         }
 
         .job-list ul {
             list-style: none;
             text-align: left;
             padding: 0;
+            margin: 0;
         }
 
         .job-list li {
             margin: 10px 0;
-            padding: 10px;
+            padding: 12px;
             background: rgba(255,255,255,0.1);
             border-radius: 10px;
             border-left: 5px solid #FF9900;
             font-size: clamp(0.9em, 2.5vw, 1.3em);
+            line-height: 1.4;
         }
 
         .apps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
             gap: 15px;
-            margin: 15px 0;
+            margin: 15px 0 25px 0; /* Extra bottom margin */
             max-width: 300px;
             margin-left: auto;
             margin-right: auto;
+            width: 100%;
         }
 
         .app-icon {
@@ -202,6 +220,7 @@
             color: white;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             animation: float 3s ease-in-out infinite;
+            margin: 0 auto;
         }
 
         @keyframes float {
