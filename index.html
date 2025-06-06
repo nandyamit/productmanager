@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Does a Tech Product Manager Do at Amazon?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 90vw;
+            height: 90vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            padding: 40px;
+            height: 100%;
+            position: relative;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .slide h1 {
+            font-size: 3em;
+            color: #232F3E;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .slide h2 {
+            font-size: 2.5em;
+            color: #FF9900;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .slide p, .slide li {
+            font-size: 1.5em;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .emoji {
+            font-size: 2em;
+            margin: 0 10px;
+        }
+
+        .amazon-box {
+            width: 200px;
+            height: 150px;
+            background: #232F3E;
+            border-radius: 10px;
+            position: relative;
+            margin: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .amazon-logo {
+            color: #FF9900;
+            font-size: 2em;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            background: #FF9900;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #e88300;
+            transform: scale(1.05);
+        }
+
+        .nav-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #232F3E;
+        }
+
+        .job-list {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .job-list ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .job-list li {
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            border-left: 5px solid #FF9900;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: #FF9900;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .superhero {
+            font-size: 5em;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .fun-fact {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 1.3em;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>🚀 What Does a Tech Product Manager Do at Amazon? 🚀</h1>
+            <div class="amazon-box">
+                <div class="amazon-logo">amazon</div>
+            </div>
+            <p>A Fun Adventure for Future Tech Stars! <span class="emoji">⭐</span></p>
+        </div>
+
+        <!-- Slide 2: What is Amazon? -->
+        <div class="slide">
+            <h2>🏢 What is Amazon?</h2>
+            <p>Amazon is like a GIANT online store where you can buy almost anything!</p>
+            <div class="apps-grid">
+                <div class="app-icon">📦</div>
+                <div class="app-icon">📱</div>
+                <div class="app-icon">🎵</div>
+                <div class="app-icon">📺</div>
+                <div class="app-icon">☁️</div>
+                <div class="app-icon">🤖</div>
+            </div>
+            <p>They deliver packages, make Alexa, create apps, and so much more!</p>
+        </div>
+
+        <!-- Slide 3: What is a Product Manager? -->
+        <div class="slide">
+            <h2>🤔 What is a Product Manager?</h2>
+            <div class="superhero">🦸‍♀️</div>
+            <p>A Product Manager is like a <strong>SUPERHERO</strong> who decides:</p>
+            <div class="job-list">
+                <ul>
+                    <li>🎯 What new apps or features to build</li>
+                    <li>🎨 How they should look and work</li>
+                    <li>👥 What people really want and need</li>
+                    <li>📅 When things should be ready</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: Think Like a Detective -->
+        <div class="slide">
+            <h2>🕵️ They Think Like Detectives!</h2>
+            <p>Product Managers ask lots of questions:</p>
+            <div class="fun-fact">
+                <p><strong>"Why do people get frustrated when shopping online?"</strong></p>
+                <p><strong>"How can we make Alexa understand kids better?"</strong></p>
+                <p><strong>"What games do families want to play together?"</strong></p>
+            </div>
+            <p>Then they solve these mysteries by creating awesome products! <span class="emoji">🔍</span></p>
+        </div>
+
+        <!-- Slide 5: Work with Teams -->
+        <div class="slide">
+            <h2>👨‍💻 They Work with Amazing Teams!</h2>
+            <p>Product Managers are like team captains who work with:</p>
+            <div class="job-list">
+                <ul>
+                    <li>💻 Engineers (who write the code)</li>
+                    <li>🎨 Designers (who make things look pretty)</li>
+                    <li>📊 Data Scientists (who study numbers)</li>
+                    <li>🧪 Testers (who make sure everything works)</li>
+                </ul>
+            </div>
+            <p>Together, they build the coolest tech products! <span class="emoji">🚀</span></p>
+        </div>
+
+        <!-- Slide 6: Real Examples -->
+        <div class="slide">
+            <h2>📱 Cool Things They've Built!</h2>
+            <p>Amazon Product Managers helped create:</p>
+            <div class="apps-grid">
+                <div class="app-icon" title="Alexa">🗣️</div>
+                <div class="app-icon" title="Prime Video">🎬</div>
+                <div class="app-icon" title="Kindle">📚</div>
+            </div>
+            <div class="fun-fact">
+                <p>Ever asked Alexa to play your favorite song? A Product Manager helped make that possible!</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Skills Needed -->
+        <div class="slide">
+            <h2>💪 What Skills Do You Need?</h2>
+            <div class="job-list">
+                <ul>
+                    <li>🧠 Being curious and asking "Why?" and "How?"</li>
+                    <li>🎨 Being creative and thinking of new ideas</li>
+                    <li>🤝 Working well with different people</li>
+                    <li>📊 Understanding numbers and data</li>
+                    <li>🗣️ Explaining ideas clearly</li>
+                </ul>
+            </div>
+            <p>You probably already have some of these skills! <span class="emoji">⭐</span></p>
+        </div>
+
+        <!-- Slide 8: Your Journey -->
+        <div class="slide">
+            <h2>🌟 Your Journey to Becoming a PM!</h2>
+            <div class="fun-fact">
+                <p><strong>1.</strong> Stay curious about technology and how things work</p>
+                <p><strong>2.</strong> Learn about computers, apps, and websites</p>
+                <p><strong>3.</strong> Practice solving problems creatively</p>
+                <p><strong>4.</strong> Study hard in school (especially math and science!)</p>
+                <p><strong>5.</strong> Maybe study computer science or business in college</p>
+            </div>
+        </div>
+
+        <!-- Slide 9: Fun Closing -->
+        <div class="slide">
+            <h1>🎉 You Could Be the Next Amazon Product Manager! 🎉</h1>
+            <div class="amazon-box">
+                <div class="amazon-logo">amazon</div>
+            </div>
+            <p>Keep dreaming, keep learning, and keep building amazing things!</p>
+            <p><span class="emoji">🚀</span> The future of technology needs YOU! <span class="emoji">🚀</span></p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+            <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+        </div>
+
+        <!-- Slide Counter -->
+        <div class="slide-counter">
+            <span id="slideNumber">1</span> / <span id="totalSlides">9</span>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            
+            document.getElementById('slideNumber').textContent = currentSlide + 1;
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+        }
+
+        function changeSlide(n) {
+            if (n === 1 && currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            } else if (n === -1 && currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            }
+        });
+
+        // Initialize
+        showSlide(0);
+
+        // Add some interactive elements
+        document.querySelectorAll('.app-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                this.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
